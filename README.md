@@ -5,3 +5,13 @@ An MCP that connects to my desktop to scan for files, then uses a resume file an
 - I'm not sure if this is done well
 - It needs some changes 
 - It kind of works 
+
+To install in claude
+```bash
+mcp install main.py
+```
+
+Alternatively, you can test it with the MCP Inspector:
+```bash
+mcp dev main.py
+```

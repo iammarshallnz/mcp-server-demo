@@ -3,7 +3,7 @@
 import os
 from mcp.server.fastmcp import FastMCP
 from mcp import types
-from mcp.types import AnyUrl
+import mcp.types
 # Create an MCP server
 mcp = FastMCP("Demo")
 
@@ -51,7 +51,7 @@ async def writeLaTex(fileName: str, content: str) -> None:
     doc = open(url, "w")
     doc.write(content)
     doc.close()
-    return "File written successfully"
+    return
 
 @mcp.tool(
     name="read-txt-tool",
@@ -77,10 +77,10 @@ def getData() -> str:
     """desktop data """
     try:
         files = os.listdir(r'C:\Users\YABOIMARSH\Desktop\\')
-        return {"files": files}
+        return str({"files": files})
     except Exception as e:
-        return {"error": str(e)}
-    
+        return str({"error": str(e)})
+
 
 
 @mcp.resource("config://app")
